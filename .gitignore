@@ -1,0 +1,36 @@
+# macOS system artifacts
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# FreshMac outputs and temp files
+output/freshmac_snapshot.txt
+output/tmp/
+output/*.log
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Development/test artifacts (not part of core repo)
+COMPLETION_REPORT.txt
+DEPLOYMENT_SUMMARY.md
+EXPORT_SH_REPAIR_REPORT.md
+FRESHMAC_TEST_REPORT.md
+INDEX.md
+MANIFEST.txt
+PROJECT_SUMMARY.md
+PROJECT_V1_0_COMPLETION.md
+QUICKSTART.md
+TESTING.md
+test_extract.sh
+test_report.md
