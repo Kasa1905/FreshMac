@@ -20,6 +20,10 @@ DATA_DIR="${ROOT_DIR}/output/tmp"
 OUTPUT_DIR="${ROOT_DIR}/output"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 FINAL_OUTPUT="${OUTPUT_DIR}/freshmac_snapshot.txt"
+SNAPSHOT_SCHEMA_VERSION="0.1"
+SNAPSHOT_STATUS="Alpha"
+# Produce ISO-8601 with timezone offset that includes a colon (e.g., +05:30)
+ISO_TIMESTAMP=$(date +%Y-%m-%dT%H:%M:%S%z | sed 's/\([0-9]\{2\}\)\([0-9]\{2\}\)$/\1:\2/')
 
 # Temporary files for stage outputs
 TMP_APPS_RAW="${DATA_DIR}/apps_raw.txt"
@@ -364,6 +368,11 @@ generate_final_output() {
     : > "${FINAL_OUTPUT}"  # Clear the file
 
     cat >> "${FINAL_OUTPUT}" <<EOF
+freshMac Snapshot
+Snapshot Schema Version: ${SNAPSHOT_SCHEMA_VERSION}
+Snapshot Status: ${SNAPSHOT_STATUS}
+Generated At: ${ISO_TIMESTAMP}
+
 ================================================================================
                          freshMac System Snapshot
 ================================================================================
